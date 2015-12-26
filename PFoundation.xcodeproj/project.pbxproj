@@ -33,6 +33,7 @@
 		DF58A9431C28B69C00526515 /* BlockObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9421C28B69C00526515 /* BlockObserver.swift */; };
 		DF58A9451C28B6BD00526515 /* OperationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9441C28B6BD00526515 /* OperationObserver.swift */; };
 		DFE1C8D61C2F491C009935B1 /* DataValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1C8D51C2F491C009935B1 /* DataValidatorTests.swift */; };
+		DFE1C8D81C2F52AE009935B1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1C8D71C2F52AE009935B1 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		DF58A9421C28B69C00526515 /* BlockObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockObserver.swift; sourceTree = "<group>"; };
 		DF58A9441C28B6BD00526515 /* OperationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationObserver.swift; sourceTree = "<group>"; };
 		DFE1C8D51C2F491C009935B1 /* DataValidatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataValidatorTests.swift; sourceTree = "<group>"; };
+		DFE1C8D71C2F52AE009935B1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				DF58A9221C28B34200526515 /* NSLock.swift */,
 				DF58A9231C28B34200526515 /* NSOperation.swift */,
 				DF58A9241C28B34200526515 /* NSURL.swift */,
+				DFE1C8D71C2F52AE009935B1 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				DF58A9311C28B4D400526515 /* Operation.swift in Sources */,
 				DF58A9291C28B34200526515 /* NSOperation.swift in Sources */,
 				DF58A9141C28B2FB00526515 /* PFoundation.swift in Sources */,
+				DFE1C8D81C2F52AE009935B1 /* String.swift in Sources */,
 				DF58A93C1C28B5CF00526515 /* OperationError.swift in Sources */,
 				DF58A9331C28B50F00526515 /* OperationQueue.swift in Sources */,
 				DF58A92E1C28B40600526515 /* Error.swift in Sources */,
