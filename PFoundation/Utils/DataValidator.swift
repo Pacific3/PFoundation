@@ -35,7 +35,7 @@ public enum DefaultValidator: DataValidator {
     case Negative
     
     public func validate(feed: AnyObject) -> Bool {
-        return self == .Positive ? true : false
+        return self == .Positive
     }
 }
 
