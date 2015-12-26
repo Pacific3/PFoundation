@@ -65,6 +65,7 @@ public enum Equal: DataValidator {
     case ToString(String)
     case ToInt(Int)
     case ToFloat(Float)
+    case ToBool(Bool)
     
     public func validate(feed: AnyObject) -> Bool {
         switch self {
@@ -88,6 +89,13 @@ public enum Equal: DataValidator {
             }
             
             return feed == f
+            
+        case .ToBool(let b):
+            guard let feed = feed as? Bool else {
+                return false
+            }
+            
+            return feed == b
         }
     }
 }
