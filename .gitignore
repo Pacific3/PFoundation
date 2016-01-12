@@ -16,5 +16,6 @@ xcuserdata
 *.xcuserstate
 *.xcscmblueprint
 .DS_Store
+*.zip
 
 Carthage/Build

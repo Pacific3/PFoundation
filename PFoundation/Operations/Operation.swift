@@ -2,7 +2,7 @@ public class Operation: NSOperation {
     
     //MARK: - KVO
     class func keyPathsForValuesAffectingIsReady() -> Set<NSObject> {
-        return ["state"]
+        return ["state", "cancelledState"]
     }
     
     class func keyPathsForValuesAffectingIsExecuting() -> Set<NSObject> {
@@ -11,6 +11,10 @@ public class Operation: NSOperation {
     
     class func keyPathsForValuesAffectingIsFinished() -> Set<NSObject> {
         return ["state"]
+    }
+    
+    class func keyPathsForValuesAffectingIsCancelled() -> Set<NSObject> {
+        return ["cancelledState"]
     }
     
     
@@ -25,11 +29,15 @@ public class Operation: NSOperation {
         case Finishing
         case Finished
         
-        func canTransitionToState(target: State) -> Bool {
+        func canTransitionToState(target: State, operationIsCancelled cancelled: Bool) -> Bool {
             switch (self, target) {
             case (.Initialized, .Pending):
                 return true
             case (.Pending, .EvaluatingConditions):
+                return true
+            case (.Pending, .Finishing) where cancelled:
+                return true
+            case (.Pending, .Ready) where cancelled:
                 return true
             case (.EvaluatingConditions, .Ready):
                 return true
@@ -64,7 +72,7 @@ public class Operation: NSOperation {
                     return
                 }
                 
-                assert(_state.canTransitionToState(newState), "invalid state transition.")
+                assert(_state.canTransitionToState(newState, operationIsCancelled: cancelled), "invalid state transition.")
                 _state = newState
             }
             
@@ -74,29 +82,60 @@ public class Operation: NSOperation {
     
     
     // MARK: - Operation "readiness"
+    private let readyLock = NSRecursiveLock()
     
     override public var ready: Bool {
-        switch state {
-        case .Initialized:
-            return cancelled
-            
-        case .Pending:
-            guard !cancelled else {
-                return true
+        var _ready = false
+        
+        readyLock.withCriticalScope {
+            switch state {
+                
+            case .Initialized:
+                _ready = cancelled
+                
+            case .Pending:
+                guard !cancelled else {
+                    state = .Ready
+                    _ready = true
+                    return
+                }
+                
+                if super.ready {
+                    evaluateConditions()
+                }
+                
+                _ready = false
+                
+            case .Ready:
+                _ready = super.ready || cancelled
+                
+            default:
+                _ready = false
             }
             
-            if super.ready {
-                evaluateConditions()
-            }
-            
-            return false
-            
-        case .Ready:
-            return super.ready || cancelled
-            
-        default:
-            return false
         }
+        
+        return _ready
+    }
+    
+    private var _cancelled = false {
+        willSet {
+            willChangeValueForKey("cancelledState")
+        }
+        
+        didSet {
+            didChangeValueForKey("cancelledState")
+            
+            if _cancelled != oldValue && _cancelled == true {
+                for observer in observers {
+                    observer.operationDidCancel(self)
+                }
+            }
+        }
+    }
+    
+    override public var cancelled: Bool {
+        return _cancelled
     }
     
     public var userInitiated: Bool {
@@ -129,8 +168,8 @@ public class Operation: NSOperation {
         cancel()
     }
     
-    func willEnqueue() {
-        _state = .Pending
+    func didEnqueue() {
+        state = .Pending
     }
     
     
@@ -161,8 +200,17 @@ public class Operation: NSOperation {
         
         state = .EvaluatingConditions
         
+        guard conditions.count > 0 else {
+            state = .Ready
+            return
+        }
+        
         OperationConditionEvaluator.evaluate(conditions, operation: self) { failures in
-            self._internalErrors.appendContentsOf(failures)
+            if !failures.isEmpty {
+                self.cancelWithErrors(failures)
+            }
+        
+            
             self.state = .Ready
         }
         
@@ -205,6 +253,17 @@ public class Operation: NSOperation {
         }
     }
     
+    override public func cancel() {
+        if finished {
+            return
+        }
+        
+        _cancelled = true
+        
+        if state > .Ready {
+            finish()
+        }
+    }
     
     // MARK: - Finishing
     
@@ -214,6 +273,11 @@ public class Operation: NSOperation {
         } else {
             finish()
         }
+    }
+    
+    public func cancelWithErrors(errors: [NSError]) {
+        _internalErrors += errors
+        cancel()
     }
     
     private var hasFinished = false

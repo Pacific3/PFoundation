@@ -60,7 +60,9 @@ public class OperationQueue: NSOperationQueue {
     weak var delegate: OperationQueueDelegate?
     
     override public func addOperation(operation: NSOperation) {
+
         if let op = operation as? Operation {
+            
             let delegate = BlockOperationObserver(
                 startHandler: nil,
                 produceHandler: { [weak self] in
@@ -93,12 +95,14 @@ public class OperationQueue: NSOperationQueue {
                 let exclusivityController = RBExclusivityController.sharedInstance
                 
                 exclusivityController.addOperation(op, categories: concurrencyCategories)
-                op.addObserver(BlockOperationObserver { operation, _ in
-                    exclusivityController.removeOperation(operation, categories: concurrencyCategories)
-                    })
+                op.addObserver(
+                    BlockOperationObserver(
+                        produceHandler: { operation, _ in
+                            exclusivityController.removeOperation(operation, categories: concurrencyCategories)
+                        }
+                    )
+                )
             }
-            
-            op.willEnqueue()
         } else {
             operation.addCompletionBlock { [weak self, weak operation] in
                 guard let queue = self, let operation = operation else { return }
@@ -108,6 +112,10 @@ public class OperationQueue: NSOperationQueue {
         
         delegate?.operationQueue?(self, willAddOperation: operation)
         super.addOperation(operation)
+        
+        if let op = operation as? Operation {
+            op.didEnqueue()
+        }
     }
     
     override public func addOperations(ops: [NSOperation], waitUntilFinished wait: Bool) {
