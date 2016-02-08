@@ -39,6 +39,24 @@ public enum DefaultValidator: DataValidator {
     }
 }
 
+public struct BetweenLengthString: DataValidator {
+    public let max: Int
+    public let min: Int
+    
+    public init(max: Int, min: Int) {
+        self.max = max
+        self.min = min
+    }
+    
+    public func validate(feed: Any) -> Bool {
+        guard let feed = feed as? String else {
+            return false
+        }
+        
+        return feed.characters.count >= min && feed.characters.count <= max
+    }
+}
+
 public struct MaximumLengthString: DataValidator {
     public let length: Int
     
