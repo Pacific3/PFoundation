@@ -27,15 +27,47 @@ public extension DataValidatable {
 }
 
 public protocol DataValidator {
-    func validate(feed: AnyObject) -> Bool
+    func validate(feed: Any) -> Bool
 }
 
 public enum DefaultValidator: DataValidator {
     case Positive
     case Negative
     
-    public func validate(feed: AnyObject) -> Bool {
+    public func validate(feed: Any) -> Bool {
         return self == .Positive
+    }
+}
+
+public struct MaximumLengthString: DataValidator {
+    public let length: Int
+    
+    public init(length: Int) {
+        self.length = length
+    }
+    
+    public func validate(feed: Any) -> Bool {
+        guard let feed = feed as? String else {
+            return false
+        }
+        
+        return feed.characters.count <= length
+    }
+}
+
+public struct MinimumLengthString: DataValidator {
+    public let length: Int
+    
+    public init(length: Int) {
+        self.length = length
+    }
+    
+    public func validate(feed: Any) -> Bool {
+        guard let feed = feed as? String else {
+            return false
+        }
+        
+        return feed.characters.count >= length
     }
 }
 
@@ -51,8 +83,9 @@ public enum Match: String, DataValidator {
     case PhoneNumber       = "^\\+?[\\d\\s]{3,}$"
     case PoneWithCode      = "^\\+?[\\d\\s]+\\(?[\\d\\s]{10,}$"
     case Year              = "^(19|20)\\d{2}$"
+    case ZipCode           = "^\\d{5}(?:[-\\s]\\d{4})?$"
     
-    public func validate(feed: AnyObject) -> Bool {
+    public func validate(feed: Any) -> Bool {
         guard let feed = feed as? String,
             let _ = feed.rangeOfString(self.rawValue, options: .RegularExpressionSearch) else {
                 return false
@@ -68,7 +101,7 @@ public enum Equal: DataValidator {
     case ToFloat(Float)
     case ToBool(Bool)
     
-    public func validate(feed: AnyObject) -> Bool {
+    public func validate(feed: Any) -> Bool {
         switch self {
         case .ToString(let x):
             guard let feed = feed as? String else {
