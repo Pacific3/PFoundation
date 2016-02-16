@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF47661A1C73964F00155424 /* Clonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF4766191C73964F00155424 /* Clonable.swift */; };
 		DF58A8FD1C28B2E400526515 /* PFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF58A8FC1C28B2E400526515 /* PFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF58A9041C28B2E400526515 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF58A8F91C28B2E400526515 /* PFoundation.framework */; };
 		DF58A9141C28B2FB00526515 /* PFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9131C28B2FB00526515 /* PFoundation.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF4766191C73964F00155424 /* Clonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clonable.swift; sourceTree = "<group>"; };
 		DF58A8F91C28B2E400526515 /* PFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF58A8FC1C28B2E400526515 /* PFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFoundation.h; sourceTree = "<group>"; };
 		DF58A8FE1C28B2E400526515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF4766181C73964100155424 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DF4766191C73964F00155424 /* Clonable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DF58A8EF1C28B2E400526515 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +133,7 @@
 				DF58A9131C28B2FB00526515 /* PFoundation.swift */,
 				DF58A92D1C28B40600526515 /* Error.swift */,
 				DF58A92B1C28B3CD00526515 /* Constants.swift */,
+				DF4766181C73964100155424 /* Protocols */,
 				DF58A92F1C28B4C000526515 /* Operations */,
 				DF58A91E1C28B34200526515 /* Extensions */,
 				DF58A9151C28B31300526515 /* Utils */,
@@ -323,6 +334,7 @@
 				DF58A91B1C28B31300526515 /* DataValidator.swift in Sources */,
 				DF58A9371C28B56400526515 /* GroupOperation.swift in Sources */,
 				DF58A9351C28B53E00526515 /* BlockOperation.swift in Sources */,
+				DF47661A1C73964F00155424 /* Clonable.swift in Sources */,
 				DF58A9281C28B34200526515 /* NSLock.swift in Sources */,
 				DF58A9451C28B6BD00526515 /* OperationObserver.swift in Sources */,
 				DF58A9271C28B34200526515 /* NSError.swift in Sources */,
