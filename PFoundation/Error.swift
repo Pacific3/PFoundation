@@ -1,9 +1,9 @@
 public let ErrorDomain = "net.Pacific3.ErrorDomainSpecification"
 
 public protocol ErrorConvertible {
-    typealias Code
-    typealias Description
-    typealias Domain
+    associatedtype Code
+    associatedtype Description
+    associatedtype Domain
     
     var code: Code { get }
     var errorDescription: Description { get }
