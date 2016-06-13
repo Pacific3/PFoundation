@@ -1,5 +1,5 @@
 
-extension NSOperation {
+extension Operation {
     public func addCompletionBlock(block: Void -> Void) {
         if let existing = completionBlock {
             completionBlock = {
@@ -11,7 +11,7 @@ extension NSOperation {
         }
     }
     
-    public func addDependencies(dependencies: [NSOperation]) {
+    public func addDependencies(dependencies: [Operation]) {
         for dependency in dependencies {
             addDependency(dependency)
         }

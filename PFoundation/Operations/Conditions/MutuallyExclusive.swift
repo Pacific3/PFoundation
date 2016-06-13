@@ -10,7 +10,7 @@ public struct MutuallyExclusive<T>: OperationCondition {
     
     public init() { }
     
-    public func dependencyForOperation(operation: Operation) -> NSOperation? {
+    public func dependencyForOperation(operation: Operation) -> Operation? {
         return nil
     }
     

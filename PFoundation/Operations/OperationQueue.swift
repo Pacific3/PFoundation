@@ -7,27 +7,27 @@
      a new operation it itself.
      - Parameter operationQueue: the `OperationQueue` instance that called this
      method.
-     - Parameter operation: the `NSOperation` or `Operation` that is about to
+     - Parameter operation: the `Operation` or `Operation` that is about to
      be added to the queue.
      */
-    optional func operationQueue(operationQueue: OperationQueue, willAddOperation operation: NSOperation)
+    optional func operationQueue(operationQueue: OperationQueue, willAddOperation operation: Operation)
     
     /**
-     This method is called when a `NSOperation` or `Operation` object finishes
+     This method is called when a `Operation` or `Operation` object finishes
      its execution within the `OperationQueue` instance.
      - Parameter operationQueue: the `OperationQueue` instance that called this
      method.
-     - Parameter operation: The `NSOperation` or `Operation` that finished
+     - Parameter operation: The `Operation` or `Operation` that finished
      its execution within the `OperationQueue` instance.
      - Parameter errors: `NSError` array containing the errors (if any) that happened
-     during the execution of the `NSOperation` or `Operation` instance that
+     during the execution of the `Operation` or `Operation` instance that
      just finished its execution.
      */
-    optional func operationQueue(operationQueue: OperationQueue, operationDidFinish operation: NSOperation, withErrors errors: [NSError])
+    optional func operationQueue(operationQueue: OperationQueue, operationDidFinish operation: Operation, withErrors errors: [NSError])
 }
 
 /**
- `OperationQueue` is a generalization of `NSOperationQueue` that works with
+ `OperationQueue` is a generalization of `OperationQueue` that works with
  instances of `Operation`.
  
  To use `OperationQueue` you just need to call its designated initializer.
@@ -36,7 +36,7 @@
  let queue = OperationQueue()
  ```
  
- Then, you can add instances of `Operation` or `NSOperation` to it using the `addOperation(_:)` method.
+ Then, you can add instances of `Operation` or `Operation` to it using the `addOperation(_:)` method.
  
  ```swift
  let op = Operation()
@@ -51,7 +51,7 @@
  OperationQueue.sharedQueue.addOperation(op)
  ```
  */
-public class OperationQueue: NSOperationQueue {
+public class OperationQueue: OperationQueue {
     /// Singleton object for `OperationQueue`. **Use carefully**.
     public static let sharedQueue = OperationQueue()
     
@@ -59,7 +59,7 @@ public class OperationQueue: NSOperationQueue {
     /// - SeeAlso: `protocol OperationQueueDelegate`
     weak var delegate: OperationQueueDelegate?
     
-    override public func addOperation(operation: NSOperation) {
+    override public func addOperation(operation: Operation) {
 
         if let op = operation as? Operation {
             
@@ -118,7 +118,7 @@ public class OperationQueue: NSOperationQueue {
         }
     }
     
-    override public func addOperations(ops: [NSOperation], waitUntilFinished wait: Bool) {
+    override public func addOperations(ops: [Operation], waitUntilFinished wait: Bool) {
         for operation in operations {
             addOperation(operation)
         }

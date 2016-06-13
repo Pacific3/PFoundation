@@ -5,7 +5,7 @@ public protocol OperationCondition {
     static var name: String { get }
     static var isMutuallyExclusive: Bool { get }
     
-    func dependencyForOperation(operation: Operation) -> NSOperation?
+    func dependencyForOperation(operation: Operation) -> Operation?
     func evaluateForOperation(operation: Operation, completion: OperationCompletionResult -> Void)
 }
 

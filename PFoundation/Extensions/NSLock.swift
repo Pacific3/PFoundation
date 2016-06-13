@@ -1,5 +1,5 @@
 
-extension NSLock {
+extension Lock {
     public func withCriticalScope<T>(@noescape block: Void -> T) -> T {
         lock()
         let value = block()
@@ -8,7 +8,7 @@ extension NSLock {
     }
 }
 
-extension NSRecursiveLock {
+extension RecursiveLock {
     public func withCriticalScope<T>(@noescape block: Void -> T) -> T {
         lock()
         let value = block()

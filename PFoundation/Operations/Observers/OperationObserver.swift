@@ -1,7 +1,7 @@
 
 public protocol OperationObserver {
     func operationDidStart(operation: Operation)
-    func operation(operation: Operation, didProduceOperation newOperation: NSOperation)
+    func operation(operation: Operation, didProduceOperation newOperation: Operation)
     func operationDidFinish(operation: Operation, errors: [NSError])
     func operationDidCancel(operation: Operation)
 }

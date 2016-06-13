@@ -1,6 +1,6 @@
 
 public typealias StartHandler = Operation -> Void
-public typealias ProduceHandler = (Operation, NSOperation) -> Void
+public typealias ProduceHandler = (Operation, Operation) -> Void
 public typealias FinishHandler = (Operation, [NSError]) -> Void
 public typealias CancelHandler = StartHandler
 
@@ -21,7 +21,7 @@ public struct BlockOperationObserver: OperationObserver {
         startHandler?(operation)
     }
     
-    public func operation(operation: Operation, didProduceOperation newOperation: NSOperation) {
+    public func operation(operation: Operation, didProduceOperation newOperation: Operation) {
         produceHandler?(operation, newOperation)
     }
     
