@@ -271,6 +271,8 @@
 				TargetAttributes = {
 					DF58A8F81C28B2E400526515 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 3BVQ3MVDQR;
+						DevelopmentTeamName = "OSCAR  CISNEROS LARIOS";
 						LastSwiftMigration = 0800;
 					};
 					DF58A9021C28B2E400526515 = {
