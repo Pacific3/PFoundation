@@ -11,7 +11,6 @@
 		DF58A8FD1C28B2E400526515 /* PFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF58A8FC1C28B2E400526515 /* PFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF58A9041C28B2E400526515 /* PFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF58A8F91C28B2E400526515 /* PFoundation.framework */; };
 		DF58A9141C28B2FB00526515 /* PFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9131C28B2FB00526515 /* PFoundation.swift */; };
-		DF58A91A1C28B31300526515 /* Currys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9161C28B31300526515 /* Currys.swift */; };
 		DF58A91B1C28B31300526515 /* DataValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9171C28B31300526515 /* DataValidator.swift */; };
 		DF58A91C1C28B31300526515 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9181C28B31300526515 /* Operators.swift */; };
 		DF58A91D1C28B31300526515 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58A9191C28B31300526515 /* UserDefaults.swift */; };
@@ -55,7 +54,6 @@
 		DF58A9031C28B2E400526515 /* PFoundationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PFoundationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF58A90A1C28B2E400526515 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF58A9131C28B2FB00526515 /* PFoundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFoundation.swift; sourceTree = "<group>"; };
-		DF58A9161C28B31300526515 /* Currys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currys.swift; sourceTree = "<group>"; };
 		DF58A9171C28B31300526515 /* DataValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataValidator.swift; sourceTree = "<group>"; };
 		DF58A9181C28B31300526515 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		DF58A9191C28B31300526515 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		DF58A9151C28B31300526515 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DF58A9161C28B31300526515 /* Currys.swift */,
 				DF58A9171C28B31300526515 /* DataValidator.swift */,
 				DF58A9181C28B31300526515 /* Operators.swift */,
 				DF58A9191C28B31300526515 /* UserDefaults.swift */,
@@ -334,7 +331,6 @@
 				DF58A92A1C28B34200526515 /* NSURL.swift in Sources */,
 				DF58A91D1C28B31300526515 /* UserDefaults.swift in Sources */,
 				DF58A91C1C28B31300526515 /* Operators.swift in Sources */,
-				DF58A91A1C28B31300526515 /* Currys.swift in Sources */,
 				DF58A91B1C28B31300526515 /* DataValidator.swift in Sources */,
 				DF58A9371C28B56400526515 /* GroupOperation.swift in Sources */,
 				DF58A9351C28B53E00526515 /* BlockOperation.swift in Sources */,
