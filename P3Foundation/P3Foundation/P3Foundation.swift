@@ -58,8 +58,8 @@ public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
     UserDefaults.p3_setBool(key: kP3ApplicationHasAlreadyRunOnce, value: true)
 }
 
-// MARK: - Internal
 
+// MARK: - Internal
 func encode(_ o: Any) -> String? {
     guard let string = o as? NSString else {
         return nil
