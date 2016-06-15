@@ -8,39 +8,39 @@
 
 private let userDefaults = UserDefaults.standard()
 
-// MARK: - User Defaults Get
-
-public func user_defaults_get_string(key: String) -> String {
-    let s = userDefaults.object(forKey: key) as? String
-    if let s = s {
-        return s
+extension UserDefaults {
+    // MARK: - Get Values
+    static func p3_getString(key: String) -> String {
+        let s = userDefaults.object(forKey: key) as? String
+        if let s = s {
+            return s
+        }
+        
+        return ""
     }
     
-    return ""
-}
-
-public func user_defaults_get_bool(key: String) -> Bool {
-    return userDefaults.bool(forKey: key)
-}
-
-public func user_defaults_get_integer(key: String) -> Int {
-    return userDefaults.integer(forKey: key)
-}
-
-
-// MARK: - User Defaults Set
-
-public func user_defaults_set_string(key: String, val: String?) -> Bool {
-    userDefaults.set(val, forKey: key)
-    return userDefaults.synchronize()
-}
-
-public func user_defaults_set_bool(key: String, val: Bool) -> Bool {
-    userDefaults.set(val, forKey: key)
-    return userDefaults.synchronize()
-}
-
-public func user_defaults_set_integer(key: String, val: Int) -> Bool {
-    userDefaults.set(val, forKey: key)
-    return userDefaults.synchronize()
+    static func p3_getBool(key: String) -> Bool {
+        return userDefaults.bool(forKey: key)
+    }
+    
+    static func p3_getInt(key: String) -> Int {
+        return userDefaults.integer(forKey: key)
+    }
+    
+    
+    // MARK: - Set Values
+    static func p3_setString(key: String, value: String) -> Bool {
+        userDefaults.set(value, forKey: key)
+        return userDefaults.synchronize()
+    }
+    
+    static func p3_setBool(key: String, value: Bool) -> Bool {
+        userDefaults.set(value, forKey: key)
+        return userDefaults.synchronize()
+    }
+    
+    static func p3_setInt(key: String, value: Int) -> Bool {
+        userDefaults.set(value, forKey: key)
+        return userDefaults.synchronize()
+    }
 }
