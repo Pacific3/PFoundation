@@ -6,6 +6,11 @@
 //  Copyright © 2016 Pacific3. All rights reserved.
 //
 
+// MARK: - Constants
+let kP3ApplicationHasAlreadyRunOnce = "net.Pacific3.kP3ApplicationHasAlreadyRunOnce"
+
+
+// MARK: - Public Functions
 public func p3_documentsDirectory() -> String? {
     return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
 }
@@ -40,6 +45,17 @@ public func p3_executeAfter(time: TimeInterval, handler: (Void) -> Void) {
     let when = DispatchTime.now() + (Double(NSEC_PER_SEC) * time)
     
     DispatchQueue.main.after(when: when, execute: handler)
+}
+
+public func p3_executeOnFirstLaunch(handler: ((Void) -> Void)?) {
+    let hasRunOnce = UserDefaults.p3_getBool(key: kP3ApplicationHasAlreadyRunOnce)
+    
+    guard let handler = handler where !hasRunOnce else {
+        return
+    }
+    
+    handler()
+    UserDefaults.p3_setBool(key: kP3ApplicationHasAlreadyRunOnce, value: true)
 }
 
 // MARK: - Internal
