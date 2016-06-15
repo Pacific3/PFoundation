@@ -41,3 +41,13 @@ public func p3_executeAfter(time: TimeInterval, handler: (Void) -> Void) {
     
     DispatchQueue.main.after(when: when, execute: handler)
 }
+
+// MARK: - Internal
+
+func encode(_ o: Any) -> String? {
+    guard let string = o as? NSString else {
+        return nil
+    }
+    
+    return string.removingPercentEncoding
+}
