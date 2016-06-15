@@ -12,6 +12,7 @@
 		DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF71D11F3DB009B2DEE /* Operators.swift */; };
 		DFCF5FD11D1207A900E822F9 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FCF1D1207A900E822F9 /* Dictionary.swift */; };
 		DFCF5FD21D1207A900E822F9 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */; };
+		DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCF5FD41D1207DD00E822F9 /* Clonable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DF765BF71D11F3DB009B2DEE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		DFCF5FCF1D1207A900E822F9 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		DFCF5FD41D1207DD00E822F9 /* Clonable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clonable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				DF765BEB1D11EE53009B2DEE /* P3Foundation.h */,
 				DF765BF31D11EE77009B2DEE /* P3Foundation.swift */,
 				DF765BF71D11F3DB009B2DEE /* Operators.swift */,
+				DFCF5FD31D1207C900E822F9 /* Protocols */,
 				DFCF5FCE1D12077C00E822F9 /* Extensions */,
 				DF765BED1D11EE53009B2DEE /* Info.plist */,
 			);
@@ -70,6 +73,14 @@
 				DFCF5FD01D1207A900E822F9 /* UserDefaults.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DFCF5FD31D1207C900E822F9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DFCF5FD41D1207DD00E822F9 /* Clonable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 			files = (
 				DF765BF41D11EE77009B2DEE /* P3Foundation.swift in Sources */,
 				DFCF5FD11D1207A900E822F9 /* Dictionary.swift in Sources */,
+				DFCF5FD51D1207DD00E822F9 /* Clonable.swift in Sources */,
 				DFCF5FD21D1207A900E822F9 /* UserDefaults.swift in Sources */,
 				DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */,
 			);
