@@ -31,3 +31,23 @@ extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject {
         return self.p3_number(key: key).map { $0.boolValue }
     }
 }
+
+extension Dictionary where Key: StringLiteralConvertible, Value: StringLiteralConvertible {
+    public func p3_URLEncodedString() -> String {
+        var pairs = [String]()
+        for element in self {
+            if let key = encode(element.0 as! AnyObject),
+                let value = encode(element.1 as! AnyObject) where (!value.isEmpty && !key.isEmpty) {
+                pairs.append([key, value].joined(separator: "="))
+            } else {
+                continue
+            }
+        }
+        
+        guard !pairs.isEmpty else {
+            return ""
+        }
+        
+        return pairs.joined(separator: "&")
+    }
+}
