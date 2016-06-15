@@ -29,16 +29,19 @@ extension UserDefaults {
     
     
     // MARK: - Set Values
+    @discardableResult
     static func p3_setString(key: String, value: String) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
     }
     
+    @discardableResult
     static func p3_setBool(key: String, value: Bool) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
     }
     
+    @discardableResult
     static func p3_setInt(key: String, value: Int) -> Bool {
         userDefaults.set(value, forKey: key)
         return userDefaults.synchronize()
