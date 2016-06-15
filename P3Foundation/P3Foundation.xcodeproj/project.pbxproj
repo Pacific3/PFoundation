@@ -11,6 +11,7 @@
 		DF765BF41D11EE77009B2DEE /* P3Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF31D11EE77009B2DEE /* P3Foundation.swift */; };
 		DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF71D11F3DB009B2DEE /* Operators.swift */; };
 		DF765BFA1D11FF9F009B2DEE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF91D11FF9F009B2DEE /* UserDefaults.swift */; };
+		DF765BFC1D120160009B2DEE /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BFB1D120160009B2DEE /* Dictionary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		DF765BF31D11EE77009B2DEE /* P3Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3Foundation.swift; sourceTree = "<group>"; };
 		DF765BF71D11F3DB009B2DEE /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		DF765BF91D11FF9F009B2DEE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		DF765BFB1D120160009B2DEE /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				DF765BF31D11EE77009B2DEE /* P3Foundation.swift */,
 				DF765BF71D11F3DB009B2DEE /* Operators.swift */,
 				DF765BF91D11FF9F009B2DEE /* UserDefaults.swift */,
+				DF765BFB1D120160009B2DEE /* Dictionary.swift */,
 				DF765BED1D11EE53009B2DEE /* Info.plist */,
 			);
 			path = P3Foundation;
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF765BF41D11EE77009B2DEE /* P3Foundation.swift in Sources */,
+				DF765BFC1D120160009B2DEE /* Dictionary.swift in Sources */,
 				DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */,
 				DF765BFA1D11FF9F009B2DEE /* UserDefaults.swift in Sources */,
 			);
