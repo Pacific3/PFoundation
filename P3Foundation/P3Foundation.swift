@@ -7,7 +7,9 @@
 //
 
 // MARK: - Constants
-let kP3ApplicationHasAlreadyRunOnce = "net.Pacific3.kP3ApplicationHasAlreadyRunOnce"
+public let kP3ApplicationHasAlreadyRunOnce = "net.Pacific3.kP3ApplicationHasAlreadyRunOnce"
+public let kP3ErrorDomain = "net.Pacific3.ErrorDomainSpecification"
+
 
 
 // MARK: - Public Functions
