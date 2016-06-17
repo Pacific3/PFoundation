@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF3243901D1396A6004EC635 /* P3OperationExclusivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF32438F1D1396A6004EC635 /* P3OperationExclusivityController.swift */; };
 		DF3243921D143E96004EC635 /* P3MutuallyExclusiveOperationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3243911D143E96004EC635 /* P3MutuallyExclusiveOperationCondition.swift */; };
+		DF3243941D143F74004EC635 /* P3GroupOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3243931D143F74004EC635 /* P3GroupOperation.swift */; };
 		DF765BEC1D11EE53009B2DEE /* P3Foundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DF765BEB1D11EE53009B2DEE /* P3Foundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF765BF41D11EE77009B2DEE /* P3Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF31D11EE77009B2DEE /* P3Foundation.swift */; };
 		DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF765BF71D11F3DB009B2DEE /* Operators.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		DF32438F1D1396A6004EC635 /* P3OperationExclusivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3OperationExclusivityController.swift; sourceTree = "<group>"; };
 		DF3243911D143E96004EC635 /* P3MutuallyExclusiveOperationCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3MutuallyExclusiveOperationCondition.swift; sourceTree = "<group>"; };
+		DF3243931D143F74004EC635 /* P3GroupOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P3GroupOperation.swift; sourceTree = "<group>"; };
 		DF765BE81D11EE53009B2DEE /* P3Foundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = P3Foundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF765BEB1D11EE53009B2DEE /* P3Foundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P3Foundation.h; sourceTree = "<group>"; };
 		DF765BED1D11EE53009B2DEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				DFC8A9F71D139012002324A5 /* P3Operation.swift */,
 				DFC8AA0C1D1394BC002324A5 /* P3OperationQueue.swift */,
 				DFC8AA091D139368002324A5 /* P3OperationError.swift */,
+				DF3243931D143F74004EC635 /* P3GroupOperation.swift */,
 				DFC8A9FE1D13911E002324A5 /* Conditions */,
 				DFC8A9F91D1390AC002324A5 /* Observers */,
 			);
@@ -253,6 +256,7 @@
 				DFC8AA061D139300002324A5 /* P3ErrorSpecification.swift in Sources */,
 				DFC8AA0A1D139368002324A5 /* P3OperationError.swift in Sources */,
 				DFC8A9FB1D1390BF002324A5 /* P3OperationObserver.swift in Sources */,
+				DF3243941D143F74004EC635 /* P3GroupOperation.swift in Sources */,
 				DFCF5FD71D12082700E822F9 /* Array.swift in Sources */,
 				DFCF5FD21D1207A900E822F9 /* UserDefaults.swift in Sources */,
 				DF765BF81D11F3DB009B2DEE /* Operators.swift in Sources */,
